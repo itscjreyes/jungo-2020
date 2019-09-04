@@ -2,7 +2,7 @@
 
 ## Installation
 
-1. `git clone` this repo to your local machine
+1. `git clone` this repo to your local machine and `cd` into this directory
 2. Run `touch hubspot.config.yml`
 3. Run `npm install`
 4. Authenticate your local environment with HubSpot using OAuth2
