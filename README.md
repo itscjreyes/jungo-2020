@@ -4,8 +4,7 @@
 
 1. `git clone` this repo to your local machine
 2. Run `npm install`
-3. `touch hubspot.config.yml`
-4. Authenticate your local environment with HubSpot using OAuth2
+3. Authenticate your local environment with HubSpot using OAuth2
     1. [Create a private developer app](https://developers.hubspot.com/docs/faq/how-do-i-create-an-app-in-hubspot)
     2. Run `npx hscms auth oauth2` in the command line. This will begin a series of command line prompts
     3. Enter your CMS Portal id
@@ -14,7 +13,7 @@
     6. Request for Integrations Permissions: your private app will request permission to access your account data. Click "Grant Access"
     7. If successful, you should see "Authorization Succeeded", and your hubspot.config.yml file will be updated
     8. Add `name: 'ProjectName'` to the `hubpot.config.yml` file if it isn't automatically added
-5. To start the Gulp tasks, run `gulp`
+4. To start the Gulp tasks, run `gulp`
 
 ## Production Files
 
