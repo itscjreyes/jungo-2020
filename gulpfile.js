@@ -5,7 +5,7 @@ const browserSync = require('browser-sync');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const autoprefixer = require('gulp-autoprefixer');
-const uglify = require('gulp-uglify-es').default;
+const babel = require('gulp-babel');
 const reload = browserSync.reload;
 
 gulp.task('styles', () => {
@@ -22,7 +22,7 @@ gulp.task('js', () => {
 		.pipe(plumber({
 		  errorHandler: notify.onError("Error: <%= error.message %>")
 		}))
-		.pipe(uglify())
+		.pipe(babel())
 		.pipe(gulp.dest('./dist/'))
 		.pipe(reload({stream:true}));
 });
