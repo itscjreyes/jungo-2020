@@ -65,7 +65,7 @@ gulp.task('publish',() => {
   });
 });
 
-gulp.task('publish',() => {
+gulp.task('draft',() => {
   exec('npx hscms upload --portal=portal-name --mode=draft dist hubspot-portal-name', (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
