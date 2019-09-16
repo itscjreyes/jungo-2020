@@ -6,6 +6,7 @@ const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
 const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
+const exec = require('child_process').exec;
 const reload = browserSync.reload;
 
 gulp.task('styles', () => {
@@ -40,6 +41,39 @@ gulp.task('watch',() => {
     gulp.watch('./src/**/*.scss', ['styles']);
     gulp.watch('./dist/main.css', reload);
     gulp.watch('./*.html',reload);
+});
+
+gulp.task('fetch',() => {
+  exec('npx hscms fetch --portal=portal-name hubspot-folder-name dist', (error, stdout, stderr) => {
+    if (error) {
+      console.error(`exec error: ${error}`);
+      return;
+    }
+    console.log(`stdout: ${stdout}`);
+    console.error(`stderr: ${stderr}`);
+  });
+});
+
+gulp.task('publish',() => {
+  exec('npx hscms upload --portal=portal-name --mode=publish dist hubspot-folder-name', (error, stdout, stderr) => {
+    if (error) {
+      console.error(`exec error: ${error}`);
+      return;
+    }
+    console.log(`stdout: ${stdout}`);
+    console.error(`stderr: ${stderr}`);
+  });
+});
+
+gulp.task('publish',() => {
+  exec('npx hscms upload --portal=portal-name --mode=draft dist hubspot-portal-name', (error, stdout, stderr) => {
+    if (error) {
+      console.error(`exec error: ${error}`);
+      return;
+    }
+    console.log(`stdout: ${stdout}`);
+    console.error(`stderr: ${stderr}`);
+  });
 });
 
 gulp.task('default',['styles','js','watch','bs']);

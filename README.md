@@ -22,6 +22,32 @@ The Gulp tasks will compile the final (unminified) CSS and JS files in the `dist
 
 Use the `dist` folder when pushing to HubSpot. For example, run `npx hscms upload --portal=portal-name dist hubspot-folder-name` to upload everything in the `dist` folder to the specified folder in HubSpot.
 
+## Shortcuts
+
+`gulpfile.js` includes Gulp tasks that act as shortcuts for HubSpots commands, including *fetch*, *upload as draft*, and *upload and publish*. 
+
+For example, to fetch the project from HubSpot to your local folder, run:
+
+```
+gulp fetch
+```
+
+This will run:
+
+```
+npx hscms fetch --portal=portal-name hubspot-folder-name dist
+```
+
+**In order to use these shortcuts, you will need to update `gulpfile.js` with the portal name and src/dest folder names related to your project.**
+
+### Commands
+
+Command | Output
+---|---|
+`gulp fetch` | `npx hscms fetch --portal=portal-name hubspot-folder-name dist`
+`gulp draft` | `npx hscms upload --portal=portal-name --mode=draft dist hubspot-folder-name`
+`gulp publish` | `npx hscms upload --portal=portal-name --mode=publish dist hubspot-folder-name`
+
 ---
 
 _**For more information about HubSpot's Local Development Environment, [click here](https://designers.hubspot.com/docs/tools/local-development).**_
