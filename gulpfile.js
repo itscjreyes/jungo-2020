@@ -54,6 +54,17 @@ gulp.task('fetch',() => {
   });
 });
 
+gulp.task('overwrite',() => {
+  exec('npx hscms fetch --overwrite --portal=portal-name hubspot-folder-name dist', (error, stdout, stderr) => {
+    if (error) {
+      console.error(`exec error: ${error}`);
+      return;
+    }
+    console.log(`stdout: ${stdout}`);
+    console.error(`stderr: ${stderr}`);
+  });
+});
+
 gulp.task('publish',() => {
   exec('npx hscms upload --portal=portal-name --mode=publish dist hubspot-folder-name', (error, stdout, stderr) => {
     if (error) {

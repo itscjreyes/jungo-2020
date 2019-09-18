@@ -45,6 +45,7 @@ npx hscms fetch --portal=portal-name hubspot-folder-name dist
 Command | Output
 ---|---|
 `gulp fetch` | `npx hscms fetch --portal=portal-name hubspot-folder-name dist`
+`gulp overwrite` | `npx hscms fetch --overwrite --portal=portal-name hubspot-folder-name dist`
 `gulp draft` | `npx hscms upload --portal=portal-name --mode=draft dist hubspot-folder-name`
 `gulp publish` | `npx hscms upload --portal=portal-name --mode=publish dist hubspot-folder-name`
 
