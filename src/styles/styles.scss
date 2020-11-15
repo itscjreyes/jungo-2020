@@ -14,7 +14,9 @@ body,
 html {
   font-family: "museo-sans", sans-serif;
   color: #3f3f3f; 
-  background: $blue;
+  background: linear-gradient(to bottom, $blue 25%, white 25%);
+  height: 200vh;
+  margin: 0;
 }
 
 body {
@@ -41,6 +43,40 @@ button {
     color: inherit;
     font-family: "museo-sans", sans-serif;
     cursor: pointer;
+}
+
+.btn {
+    border: 0;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    &.btn-yellow {
+        background: $yellow;
+        border: 1px solid $yellow;
+    }
+
+    &.btn-hollow {
+        background: transparent;
+        border: 1px solid $black;
+
+        &:hover,
+        &:focus {
+            background: $black;
+            color: white;
+        }
+    }
 }
 
 @import './navigation';

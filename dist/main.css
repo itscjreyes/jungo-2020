@@ -3,7 +3,10 @@ body,
 html {
   font-family: "museo-sans", sans-serif;
   color: #3f3f3f;
-  background: #0277BD; }
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(25%, #0277BD), color-stop(25%, white));
+  background: linear-gradient(to bottom, #0277BD 25%, white 25%);
+  height: 200vh;
+  margin: 0; }
 
 body {
   overflow-x: hidden; }
@@ -29,6 +32,33 @@ button {
   font-family: "museo-sans", sans-serif;
   cursor: pointer; }
 
+.btn {
+  border: 0;
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  .btn:hover {
+    -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+    -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+  .btn.btn-yellow {
+    background: #FDC526;
+    border: 1px solid #FDC526; }
+  .btn.btn-hollow {
+    background: transparent;
+    border: 1px solid #3F3F3F; }
+    .btn.btn-hollow:hover, .btn.btn-hollow:focus {
+      background: #3F3F3F;
+      color: white; }
+
 header.navigation {
   position: relative;
   z-index: 5; }
@@ -36,21 +66,110 @@ header.navigation {
     padding-top: 20px;
     padding-bottom: 20px; }
   header.navigation .top-bar {
-    display: none; }
+    position: relative; }
+    header.navigation .top-bar .btn {
+      padding: 10px 15px;
+      font-size: 14px; }
+    header.navigation .top-bar .container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+  header.navigation .login {
+    color: white;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-right: 30px;
+    font-weight: 600; }
+  header.navigation .login-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: white;
+    text-align: center;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 7px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 6;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease; }
+    header.navigation .login-dropdown.active {
+      top: 100%;
+      opacity: 1;
+      visibility: visible; }
+    header.navigation .login-dropdown span {
+      display: block;
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 10px; }
+    header.navigation .login-dropdown input[type="text"] {
+      -webkit-appearance: none;
+      border: 0;
+      border-bottom: 2px solid #0277BD;
+      padding: 4px; }
+      header.navigation .login-dropdown input[type="text"].error {
+        border-bottom: 2px solid red !important;
+        background: rgba(255, 0, 0, 0.15) !important; }
+    header.navigation .login-dropdown input[type="submit"] {
+      display: block;
+      margin: 15px auto 0; }
   header.navigation .main-nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease; }
+    header.navigation .main-nav.sticky {
+      position: fixed;
+      background: white;
+      border-bottom: 1px solid #D9EBF5; }
+      header.navigation .main-nav.sticky .container {
+        padding-top: 10px;
+        padding-bottom: 10px; }
+      header.navigation .main-nav.sticky .logo-main {
+        opacity: 0;
+        visibility: hidden; }
+      header.navigation .main-nav.sticky .logo-full {
+        opacity: 1;
+        visibility: visible; }
+      header.navigation .main-nav.sticky .main-item {
+        color: #3F3F3F; }
+        header.navigation .main-nav.sticky .main-item:after {
+          background: #3F3F3F; }
+    header.navigation .main-nav .container {
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
   header.navigation .logo-main {
-    width: 175px; }
+    width: 175px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease; }
   header.navigation .logo-full {
-    display: none; }
+    position: absolute;
+    width: 160px;
+    left: 4%;
+    top: 8px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease; }
   header.navigation ul.nav {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -71,16 +190,17 @@ header.navigation {
   header.navigation .main-item {
     display: block;
     position: relative;
-    font-size: 16px;
+    font-size: 18px;
     color: white;
-    padding: 0 0 5px;
+    padding: 10px 0;
     margin: 0 0 0 40px;
-    outline: none; }
+    outline: none;
+    font-weight: 600; }
     header.navigation .main-item:after {
       position: absolute;
       content: '';
       width: 0;
-      height: 1px;
+      height: 2px;
       background: white;
       -webkit-transition: all 0.2s ease;
       transition: all 0.2s ease;
@@ -103,7 +223,7 @@ header.navigation {
       font-weight: 900;
       content: '\f107';
       right: 0;
-      top: 0;
+      top: 10px;
       -webkit-transition: all 0.2s ease;
       transition: all 0.2s ease; }
   header.navigation .has-children.active .main-item:after {
@@ -112,7 +232,7 @@ header.navigation {
     -webkit-transform: rotateX(180deg);
             transform: rotateX(180deg); }
   header.navigation .has-children.active .sub-nav {
-    top: calc(100% + 20px);
+    top: calc(100% + 15px);
     opacity: 1;
     visibility: visible; }
   header.navigation .sub-nav {

@@ -8,21 +8,131 @@ header.navigation {
     }
 
     .top-bar {
-        display: none;
+        position: relative;
+
+        .btn {
+            padding: 10px 15px;
+            font-size: 14px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+    }
+
+    .login {
+        color: white;
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-right: 30px;
+        font-weight: 600;
+    }
+
+    .login-dropdown {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        background: white;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 0 7px 20px rgba(0,0,0,0.1);
+        padding: 15px;
+        font-size: 14px;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 6;
+        transition: all 0.2s ease;
+
+        &.active {
+            top: 100%;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        span {
+            display: block;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"] {
+            -webkit-appearance: none;
+            border: 0;
+            border-bottom: 2px solid $blue;
+            padding: 4px;
+            
+            &.error {
+                border-bottom: 2px solid red !important;
+                background: rgba(255,0,0,0.15) !important;
+            }
+        }
+
+        input[type="submit"] {
+            display: block;
+            margin: 15px auto 0;
+        }
     }
 
     .main-nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: all 0.2s ease;
+
+        &.sticky {
+            position: fixed;
+            background: white;
+            border-bottom: 1px solid $blue--20;
+
+            .container {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .logo-main {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .logo-full {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .main-item {
+                color: $black;
+
+                &:after {
+                    background: $black;
+                }
+            }
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 
     .logo-main {
         width: 175px;
+        transition: all 0.2s ease;
     }
 
     .logo-full {
-        display: none;
+        position: absolute;
+        width: 160px;
+        left: 4%;
+        top: 8px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s ease;
     }
 
     ul.nav {
@@ -43,17 +153,18 @@ header.navigation {
     .main-item {
         display: block;
         position: relative;
-        font-size: 16px;
+        font-size: 18px;
         color: white;
-        padding: 0 0 5px;
+        padding: 10px 0;
         margin: 0 0 0 40px;
         outline: none;
+        font-weight: 600;
 
         &:after {
             position: absolute;
             content: '';
             width: 0;
-            height: 1px;
+            height: 2px;
             background: white;
             transition: all 0.2s ease;
             bottom: 0;
@@ -85,7 +196,7 @@ header.navigation {
                 font-weight: 900;
                 content: '\f107';
                 right: 0;
-                top: 0;
+                top: 10px;
                 transition: all 0.2s ease;
             }
         }
@@ -102,7 +213,7 @@ header.navigation {
             }
 
             .sub-nav {
-                top: calc(100% + 20px);
+                top: calc(100% + 15px);
                 opacity: 1;
                 visibility: visible;
             }
