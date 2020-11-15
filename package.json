@@ -27,6 +27,7 @@
     "gulp-sass": "^4.0.2"
   },
   "dependencies": {
+    "@babel/core": "^7.12.3",
     "@hubspot/cms-cli": "0.0.24"
   }
 }

@@ -44,7 +44,7 @@ gulp.task('watch',() => {
 });
 
 gulp.task('fetch',() => {
-  exec('npx hscms fetch --portal=portal-name hubspot-folder-name dist', (error, stdout, stderr) => {
+  exec('npx hscms fetch --portal=jungo jungo-2020 dist', (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
       return;
@@ -55,7 +55,7 @@ gulp.task('fetch',() => {
 });
 
 gulp.task('overwrite',() => {
-  exec('npx hscms fetch --overwrite --portal=portal-name hubspot-folder-name dist', (error, stdout, stderr) => {
+  exec('npx hscms fetch --overwrite --portal=jungo jungo-2020 dist', (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
       return;
@@ -66,7 +66,7 @@ gulp.task('overwrite',() => {
 });
 
 gulp.task('publish',() => {
-  exec('npx hscms upload --portal=portal-name --mode=publish dist hubspot-folder-name', (error, stdout, stderr) => {
+  exec('npx hscms upload --portal=jungo --mode=publish dist jungo-2020', (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
       return;
@@ -77,7 +77,7 @@ gulp.task('publish',() => {
 });
 
 gulp.task('draft',() => {
-  exec('npx hscms upload --portal=portal-name --mode=draft dist hubspot-portal-name', (error, stdout, stderr) => {
+  exec('npx hscms upload --portal=jungo --mode=draft dist jungo-2020', (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
       return;

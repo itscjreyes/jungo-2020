@@ -1,0 +1,46 @@
+@import url("https://use.typekit.net/umb3alt.css");
+@import './normalize';
+
+$blue: #0277BD;
+$yellow: #FDC526;
+$blue--light: #F2F8FC;
+$black: #3F3F3F;
+$green: #43B77D;
+$blue--20: #D9EBF5;
+$green--20: #D9F1E5;
+$yellow--20: #FFF3D4;
+
+body,
+html {
+  font-family: "museo-sans", sans-serif;
+  color: #3f3f3f; 
+  background: $blue;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1600px;
+    padding: 50px 4%;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+button {
+    -webkit-appearance: none;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    color: inherit;
+    font-family: "museo-sans", sans-serif;
+    cursor: pointer;
+}
+
+@import './navigation';
