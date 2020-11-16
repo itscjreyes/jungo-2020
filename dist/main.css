@@ -263,3 +263,168 @@ header.navigation {
         background: #D9EBF5; }
     header.navigation .sub-item:last-child a {
       border-bottom: 0; }
+  header.navigation .mobile-trigger {
+    display: none;
+    position: relative;
+    width: 25px;
+    height: 21px;
+    outline: none; }
+    header.navigation .mobile-trigger span {
+      position: absolute;
+      width: 25px;
+      height: 3px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background: #3F3F3F;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease; }
+      header.navigation .mobile-trigger span:nth-child(1) {
+        top: 0; }
+      header.navigation .mobile-trigger span:nth-child(2) {
+        top: 9px; }
+      header.navigation .mobile-trigger span:nth-child(3) {
+        bottom: 0; }
+    header.navigation .mobile-trigger.active span:nth-child(1) {
+      -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+      top: 50%; }
+    header.navigation .mobile-trigger.active span:nth-child(2) {
+      width: 0; }
+    header.navigation .mobile-trigger.active span:nth-child(3) {
+      -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+      top: 50%;
+      bottom: auto; }
+
+body.mobile .top-bar {
+  display: none; }
+
+body.mobile .top-bar-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 20px 25px;
+  border-top: 1px solid #3F3F3F;
+  width: calc(100% - 40px); }
+  body.mobile .top-bar-content .btn {
+    padding: 10px 15px;
+    font-size: 14px; }
+
+body.mobile .login {
+  color: #3F3F3F; }
+
+body.mobile .login-dropdown {
+  position: fixed;
+  border: 1px solid #3F3F3F;
+  left: 0;
+  top: 30vh;
+  margin: auto;
+  width: 400px;
+  max-width: calc(90% - 30px);
+  font-size: 16px;
+  padding: 25px 15px; }
+  body.mobile .login-dropdown.active {
+    top: 25vh; }
+  body.mobile .login-dropdown span {
+    font-size: 18px; }
+
+body.mobile header.navigation .mobile-trigger {
+  display: block; }
+
+body.mobile header.navigation .logo-main {
+  display: none; }
+
+body.mobile header.navigation .logo-full {
+  position: relative;
+  width: 120px;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  visibility: visible; }
+
+body.mobile header.navigation .main-nav {
+  position: fixed;
+  background: white;
+  border-bottom: 1px solid #3F3F3F; }
+  body.mobile header.navigation .main-nav .container {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+
+body.mobile header.navigation nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  width: 100%;
+  height: calc(100vh - 62px);
+  top: 62px;
+  left: 0;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  body.mobile header.navigation nav.active {
+    opacity: 1;
+    visibility: visible; }
+
+body.mobile header.navigation ul.nav {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: calc(100% - 80px);
+  overflow-y: scroll;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  body.mobile header.navigation ul.nav.dropdown-active {
+    opacity: 0.5;
+    -webkit-filter: blur(3px);
+            filter: blur(3px); }
+
+body.mobile header.navigation .has-children .main-item:before {
+  right: 20px;
+  top: 30px; }
+
+body.mobile header.navigation .main-item {
+  color: #3F3F3F;
+  width: 100%;
+  text-align: left;
+  padding: 30px 20px;
+  margin: 0;
+  font-size: 20px;
+  border-bottom: 1px solid #EDEDED; }
+
+body.mobile header.navigation .sub-nav {
+  display: none;
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+
+body.mobile header.navigation .sub-item a {
+  padding: 20px;
+  font-size: 18px; }
+
+body.mobile header.navigation .sub-item:last-child a {
+  border-bottom: 1px solid #EDEDED; }

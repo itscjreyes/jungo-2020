@@ -1,4 +1,17 @@
 const navigation = () => {
+    manageWidth();
+    if ($('body').hasClass('desktop')) {
+        desktopNav();
+    }
+    if ($('body').hasClass('mobile')) {
+        mobileNav();
+    }
+    mobileSetup();
+    loginFn();
+    stickyNav();
+}
+
+const desktopNav = () => {
     const items = document.querySelectorAll('.nav button.main-item');
     items.forEach(item => {
         item.addEventListener('click', () => {
@@ -23,21 +36,22 @@ const navigation = () => {
         }
     }
 
-	$('body').mouseup(function(e) {
+    $('body').mouseup(function(e) {
         const hasChildren = $('.has-children');
         outsideObject(e, hasChildren);
     });
+}
 
-
-    // LOGIN
-
+const loginFn = () => {
     $('#login-btn').on('click', function(e){
         e.preventDefault();
         $('.login-dropdown').toggleClass('active');
+        $('ul.nav').toggleClass('dropdown-active');
     });
     
     const removeLoginDropdown = () => {
         $('.login-dropdown').removeClass('active');
+        $('ul.nav').removeClass('dropdown-active');
     }
     
     $("body").mouseup(function (e) {
@@ -66,27 +80,76 @@ const navigation = () => {
     loginInput.on('input', function(){
         loginInput.removeClass('error');
     });
-
-    // STICKY NAV
-
-    const stickyNav = () => {
-        $(document).scroll(function () {
-          const y = $(document).scrollTop();
-          const topBar = $('.top-bar').height();
-          const nav = document.querySelector('.main-nav');
-      
-          removeLoginDropdown();
-          $('.has-children').removeClass('active');
-      
-          if (y >= topBar) {
-            nav.classList.add('sticky');
-          } else {
-            nav.classList.remove('sticky');
-          }
-        });
-    }
-
-    stickyNav()
 }
 
-navigation();
+const stickyNav = () => {
+    $(document).scroll(function () {
+        const y = $(document).scrollTop();
+        const topBar = $('.top-bar').height();
+        const nav = document.querySelector('body .main-nav');
+    
+        $('.login-dropdown').removeClass('active');
+        $('.has-children').removeClass('active');
+    
+        if (!$('body').hasClass('mobile')) {
+            if (y >= topBar) {
+                nav.classList.add('sticky');
+            } else {
+                nav.classList.remove('sticky');
+            }
+        }
+    });
+}
+
+const manageWidth = () => {
+    const setMobileClass = () => {
+        const body = document.querySelector('body');
+    
+        if (window.innerWidth < 1030) {
+            body.classList.add('mobile');
+            body.classList.remove('desktop');
+        } else {
+            body.classList.add('desktop');
+            body.classList.remove('mobile');
+        }
+    }
+
+    window.onload = setMobileClass();
+    window.addEventListener('resize', setMobileClass);
+}
+
+const mobileSetup = () => {
+    $(window).on('resize', function(){
+		if ($('body').hasClass('mobile')){
+			$('.top-bar-content').appendTo('.main-nav nav');
+		} else {
+			$('.top-bar-content').appendTo('.top-bar .container');
+		}
+	}).resize();
+}
+
+
+const mobileNav = () => {
+    const trigger = document.querySelector('.mobile-trigger');
+    const nav = document.querySelector('header.navigation nav');
+
+    trigger.addEventListener('click', () => {
+        trigger.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+
+    $('.main-item').on('click', (e) => {
+        const parent = $(e.target).parent();
+        if (parent.hasClass('active')) {
+            parent.removeClass('active');
+            parent.find('.sub-nav').slideUp();
+        } else {
+            $('.has-children').removeClass('active');
+            $('.sub-nav').slideUp();
+            parent.addClass('active');
+            parent.find('.sub-nav').slideDown();
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", navigation());

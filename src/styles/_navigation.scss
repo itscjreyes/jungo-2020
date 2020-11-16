@@ -258,4 +258,206 @@ header.navigation {
             }
         }
     }
+
+    .mobile-trigger {
+        display: none;
+        position: relative;
+        width: 25px;
+        height: 21px;
+        outline: none;
+
+        span {
+            position: absolute;
+            width: 25px;
+            height: 3px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background: $black;
+            transition: all 0.2s ease;
+
+            &:nth-child(1) {
+                top: 0;
+            }
+
+            &:nth-child(2) {
+                top: 9px;
+            }
+
+            &:nth-child(3) {
+                bottom: 0;
+            }
+        }
+
+        &.active {
+            span {
+                &:nth-child(1) {
+                    transform: rotate(45deg);
+                    top: 50%;
+                }
+
+                &:nth-child(2) {
+                    width: 0;
+                }
+
+                &:nth-child(3) {
+                    transform: rotate(-45deg);
+                    top: 50%;
+                    bottom: auto;
+                }
+            }
+        }
+    }
+}
+
+body.mobile {
+    .top-bar {
+        display: none;
+    }
+
+    .top-bar-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px 25px;
+        border-top: 1px solid $black;
+        width: calc(100% - 40px);
+
+        .btn {
+            padding: 10px 15px;
+            font-size: 14px;
+        }
+    }
+
+    .login {
+        color: $black;
+    }
+
+    .login-dropdown {
+        position: fixed;
+        border: 1px solid $black;
+        left: 0;
+        top: 30vh;
+        margin: auto;
+        width: 400px;
+        max-width: calc(90% - 30px);
+        font-size: 16px;
+        padding: 25px 15px;
+
+        &.active {
+            top: 25vh;
+        }
+
+        span {
+            font-size: 18px;
+        }
+    }
+
+    header.navigation {
+        .mobile-trigger {
+            display: block;
+        }
+
+        .logo-main {
+            display: none;
+        }
+
+        .logo-full {
+            position: relative;
+            width: 120px;
+            left: 0;
+            top: 0;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .main-nav {
+            position: fixed;
+            background: white;
+            border-bottom: 1px solid $black;
+
+            .container {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-direction: column;
+            position: fixed;
+            width: 100%;
+            height: calc(100vh - 62px);
+            top: 62px;
+            left: 0;
+            background: white;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+
+            &.active {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        ul.nav {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: calc(100% - 80px);
+            overflow-y: scroll;
+            transition: all 0.2s ease;
+
+            &.dropdown-active {
+                opacity: 0.5;
+                filter: blur(3px);
+            }
+        }
+
+        .has-children {
+            .main-item {
+                &:before {
+                    right: 20px;
+                    top: 30px;
+                }
+            }
+        }
+
+        .main-item {
+            color: $black;
+            width: 100%;
+            text-align: left;
+            padding: 30px 20px;
+            margin: 0;
+            font-size: 20px;
+            border-bottom: 1px solid #EDEDED;
+        }
+
+        .sub-nav {
+            display: none;
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+            box-shadow: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sub-item {
+            a {
+                padding: 20px;
+                font-size: 18px;
+            }
+
+            &:last-child {
+                a {
+                    border-bottom: 1px solid #EDEDED;
+                }
+            }
+        }
+    }
 }
