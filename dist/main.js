@@ -1,4 +1,4 @@
-const navigation = () => {
+function navigation(){
     manageWidth();
     if ($('body').hasClass('desktop')) {
         desktopNav();
@@ -9,25 +9,25 @@ const navigation = () => {
     mobileSetup();
     loginFn();
     stickyNav();
-}
+};
 
-const desktopNav = () => {
+function desktopNav(){
     const items = document.querySelectorAll('.nav button.main-item');
-    items.forEach(item => {
-        item.addEventListener('click', () => {
-            const parent = item.closest('.has-children');
-            if (parent.classList.contains('active')){
-                parent.classList.remove('active')
+    items.forEach(function (item) {
+        item.addEventListener('click', function () {
+            var parent = item.closest('.has-children');
+            if (parent.classList.contains('active')) {
+                parent.classList.remove('active');
             } else {
-                items.forEach(i => {
+                items.forEach(function (i) {
                     i.closest('.has-children').classList.remove('active');
-                })
-                parent.classList.add('active')
+                });
+                parent.classList.add('active');
             }
-        })
+        });
     });
 
-    const outsideObject = (e, clickTarget) => {
+    function outsideObject(e, clickTarget){
         if (e.target.id != clickTarget.attr('id') && !clickTarget.has(e.target).length) {
             const mainItems = document.querySelectorAll('.has-children');
             mainItems.forEach(item => {
@@ -42,14 +42,14 @@ const desktopNav = () => {
     });
 }
 
-const loginFn = () => {
+function loginFn(){
     $('#login-btn').on('click', function(e){
         e.preventDefault();
         $('.login-dropdown').toggleClass('active');
         $('ul.nav').toggleClass('dropdown-active');
     });
     
-    const removeLoginDropdown = () => {
+    function removeLoginDropdown(){
         $('.login-dropdown').removeClass('active');
         $('ul.nav').removeClass('dropdown-active');
     }
@@ -82,7 +82,7 @@ const loginFn = () => {
     });
 }
 
-const stickyNav = () => {
+function stickyNav(){
     $(document).scroll(function () {
         const y = $(document).scrollTop();
         const topBar = $('.top-bar').height();
@@ -101,7 +101,7 @@ const stickyNav = () => {
     });
 }
 
-const manageWidth = () => {
+function manageWidth(){
     const setMobileClass = () => {
         const body = document.querySelector('body');
     
@@ -116,9 +116,9 @@ const manageWidth = () => {
 
     window.onload = setMobileClass();
     window.addEventListener('resize', setMobileClass);
-}
+};
 
-const mobileSetup = () => {
+function mobileSetup(){
     $(window).on('resize', function(){
 		if ($('body').hasClass('mobile')){
 			$('.top-bar-content').appendTo('.main-nav nav');
@@ -126,10 +126,10 @@ const mobileSetup = () => {
 			$('.top-bar-content').appendTo('.top-bar .container');
 		}
 	}).resize();
-}
+};
 
 
-const mobileNav = () => {
+function mobileNav(){
     const trigger = document.querySelector('.mobile-trigger');
     const nav = document.querySelector('header.navigation nav');
 
@@ -138,7 +138,7 @@ const mobileNav = () => {
         nav.classList.toggle('active');
     });
 
-    $('.main-item').on('click', (e) => {
+    $('.main-item').on('click', function(e){
         const parent = $(e.target).parent();
         if (parent.hasClass('active')) {
             parent.removeClass('active');
@@ -153,3 +153,34 @@ const mobileNav = () => {
 }
 
 document.addEventListener("DOMContentLoaded", navigation());
+
+function staticBar(){
+    var staticBarBtn = document.querySelectorAll('button.close-static-bar');
+
+    function staticBarBtnClick(e){
+    e.preventDefault();
+    var target = e.target.closest('button');
+    var storageItem = 'static-bar-' + target.id;
+    localStorage.setItem(storageItem, 'closed');
+    var parentBar = target.closest('button').parentNode.parentNode;
+    parentBar.style.display = 'none';
+    }
+
+    var covidBarStatus = localStorage.getItem('static-bar-covid-bar');
+
+    if (covidBarStatus == 'closed') {
+    document.querySelector('.static-bar[data-id="covid-bar"]').style.display = 'none';
+    }
+
+    var cookieBarStatus = localStorage.getItem('static-bar-cookie-bar');
+
+    if (cookieBarStatus == 'closed') {
+    document.querySelector('.static-bar[data-id="cookie-bar"]').style.display = 'none';
+    }
+
+    staticBarBtn.forEach(function(btn){
+    btn.addEventListener('click', staticBarBtnClick);
+    })
+}
+
+document.addEventListener("DOMContentLoaded", staticBar());

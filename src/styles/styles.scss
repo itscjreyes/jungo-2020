@@ -10,11 +10,15 @@ $blue--20: #D9EBF5;
 $green--20: #D9F1E5;
 $yellow--20: #FFF3D4;
 
+section {
+    height: 150vh;
+    background: $blue;
+}
+
 body,
 html {
   font-family: "museo-sans", sans-serif;
   color: #3f3f3f; 
-  background: linear-gradient(to bottom, $blue 25%, white 25%);
   height: 200vh;
   margin: 0;
 }
@@ -29,10 +33,24 @@ body {
     margin: auto;
 }
 
+h1, h2, h3, h4, h5 {
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+p, li {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
 a {
     text-decoration: none;
     color: inherit;
     transition: all 0.2s ease;
+}
+
+img {
+    max-width: 100%;
 }
 
 button {
@@ -80,3 +98,4 @@ button {
 }
 
 @import './navigation';
+@import './footer';

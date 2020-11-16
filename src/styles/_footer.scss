@@ -1,0 +1,228 @@
+.static-bar-wrapper {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: column;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 -5px 10px rgba(0,0,0,0.06);
+    z-index: 10;
+}
+
+.static-bar {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    background: #fff6bf;
+    border-top: 1px solid lightgrey;
+
+    p {
+        font-size: 13px;
+        margin: 0;
+    }
+
+    a {
+        display: inline-block;
+        color: $blue;
+        font-weight: bold;
+        text-decoration: underline;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+    &[data-id="cookie-bar"] {
+        background: black;
+
+        p {
+            color: white;
+        }
+
+        a {
+            color: white;
+        }
+
+        button {
+            color: white;
+            border: 1px solid white;
+        }
+    }
+
+    button {
+        display: inline-block;
+        text-transform: uppercase;
+        padding: 6px 15px;
+        font-size: 12px;
+        transition: all .2s ease;
+        color: $blue;
+        font-weight: bold;
+        background: transparent;
+        border: 1px solid $blue;
+        margin: 0 20px;
+        border-radius: 5px;
+
+        &:hover,
+        &:focus {
+            background: $blue;
+            color: white;
+            border: 1px solid $blue;
+        }
+    }
+}
+
+footer {
+    border-top: 1px solid #EDEDED;
+
+    .container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    h2 {
+        font-size: 16px;
+        margin-bottom: 10px; 
+        text-transform: uppercase;
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        list-style: none;
+
+        a {
+            font-size: 14px;
+            display: block;
+            color: inherit;
+            margin-top: 5px;
+            border-left: 0px solid rgba(255, 255, 255, 0);
+
+            &:hover,
+            &:focus {
+                color: $blue;
+                border-left: 2px solid $yellow;
+                padding-left: 10px;
+            }
+        }
+    }
+
+    p {
+        font-size: 14px;
+
+        a {
+            text-decoration: underline;
+            
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .copyright {
+        p {
+            text-align: center;
+            padding: 0 4% 20px;
+        }
+    }
+
+    .footer-logo {
+        img {
+            width: 175px;
+        }
+    }
+
+    .footer-logo,
+    .footer-quick-links,
+    .footer-features {
+        margin-right: 10%;
+    }
+}
+
+.social-group {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 10px; 
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-size: 14px;
+        color: white;
+        background: #3f3f3f;
+
+        &.facebook-icon {
+            &:hover,
+            &:focus {
+                background: #3b5998;
+            }
+        }
+
+        &.twitter-icon {
+            &:hover,
+            &:focus {
+                background: #00aced;
+            }
+        }
+
+        &.linkedin-icon {
+            &:hover,
+            &:focus {
+                background: #007bb6;
+            }
+        }
+
+        &.instagram-icon {
+            &:hover,
+            &:focus {
+                background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    footer {
+        .container {
+            flex-wrap: wrap;
+        }
+
+        .footer-logo {
+            width: 100%;
+            margin-right: 0;
+        }
+
+        .footer-logo,
+        .footer-quick-links,
+        .footer-features {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 415px) {
+    footer {
+        .container {
+            justify-content: space-between;
+        }
+
+        .footer-quick-links,
+        .footer-features {
+            width: 50%;
+            margin-right: 0;
+        }
+    }
+}
