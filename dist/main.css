@@ -41,6 +41,20 @@ a {
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease; }
 
+.caption {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #FDC526;
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin: 0 0 30px; }
+
+.title {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 30px; }
+
 img {
   max-width: 100%; }
 
@@ -61,7 +75,7 @@ button {
   text-transform: uppercase;
   text-align: center;
   padding: 15px 20px;
-  margin: 10px 20px 0 0;
+  margin: 10px 15px 0 0;
   border-radius: 5px;
   font-size: 18px;
   font-weight: 600;
@@ -92,6 +106,10 @@ button {
 @media screen and (max-width: 1024px) {
   .banner .container {
     padding-top: 140px; } }
+
+@media screen and (max-width: 415px) {
+  .title {
+    font-size: 32px; } }
 
 header.navigation {
   position: absolute;
@@ -689,3 +707,55 @@ footer {
   .banner-home .content-wrapper p {
     font-size: 20px;
     line-height: 1.6; } }
+
+.image-and-content .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.image-and-content .img-wrapper {
+  width: 50%; }
+  .image-and-content .img-wrapper img {
+    display: block; }
+
+.image-and-content .content-wrapper {
+  width: 40%; }
+
+.image-and-content .btn-group {
+  margin-top: 30px; }
+
+.image-and-content.img-right .container {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse; }
+
+.image-and-content.content-top .container {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+
+.image-and-content.content-middle .container {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.image-and-content.content-bottom .container {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end; }
+
+@media screen and (max-width: 950px) {
+  .image-and-content .container {
+    display: block; }
+  .image-and-content .img-wrapper {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 40px; }
+  .image-and-content .content-wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin: auto; } }
