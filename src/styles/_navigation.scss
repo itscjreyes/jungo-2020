@@ -413,6 +413,7 @@ body.mobile {
             width: 100%;
             height: calc(100% - 80px);
             overflow-y: scroll;
+            overflow-x: hidden;
             transition: all 0.2s ease;
 
             &.dropdown-active {
