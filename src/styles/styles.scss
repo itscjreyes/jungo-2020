@@ -24,7 +24,7 @@ body {
 
 .container {
     max-width: 1600px;
-    padding: 50px 4%;
+    padding: 60px 4%;
     margin: auto;
 }
 
@@ -69,7 +69,7 @@ a {
     color: $yellow;
     letter-spacing: 3px;
     font-weight: 600;
-    margin: 0 0 30px;
+    margin: 0 0 20px;
 }
 
 .title {
@@ -81,6 +81,18 @@ a {
 
 img {
     max-width: 100%;
+}
+
+.lazyload,
+.lazyloading {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.lazyloaded {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.5s ease;
 }
 
 button {
@@ -140,6 +152,10 @@ button {
     }
 }
 
+.vidyard-player-wrapper--hidden {
+    display: none;
+}
+
 @media screen and (max-width: 1024px) {
     .banner {
         .container {
@@ -159,3 +175,4 @@ button {
 
 @import './home-banner';
 @import './image-and-text';
+@import './grid-of-cards';

@@ -11,7 +11,7 @@ body {
 
 .container {
   max-width: 1600px;
-  padding: 50px 4%;
+  padding: 60px 4%;
   margin: auto; }
 
 .banner {
@@ -47,7 +47,7 @@ a {
   color: #FDC526;
   letter-spacing: 3px;
   font-weight: 600;
-  margin: 0 0 30px; }
+  margin: 0 0 20px; }
 
 .title {
   font-size: 40px;
@@ -57,6 +57,19 @@ a {
 
 img {
   max-width: 100%; }
+
+.lazyload,
+.lazyloading {
+  opacity: 0;
+  -webkit-transform: translateY(20px);
+          transform: translateY(20px); }
+
+.lazyloaded {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
 
 button {
   -webkit-appearance: none;
@@ -102,6 +115,9 @@ button {
       .btn.btn-hollow.white:hover, .btn.btn-hollow.white:focus {
         background: white;
         color: #3F3F3F; }
+
+.vidyard-player-wrapper--hidden {
+  display: none; }
 
 @media screen and (max-width: 1024px) {
   .banner .container {
@@ -759,3 +775,153 @@ footer {
     width: 100%;
     max-width: 600px;
     margin: auto; } }
+
+.grid-of-cards .title-wrapper {
+  margin: 0 0 40px; }
+  .grid-of-cards .title-wrapper p {
+    margin: 0; }
+  .grid-of-cards .title-wrapper.center {
+    margin: 0 auto 40px;
+    text-align: center; }
+
+.grid-of-cards .cards-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -10px; }
+  .grid-of-cards .cards-wrapper .title-wrapper {
+    width: calc(100% / 3 - 40px);
+    margin: 10px;
+    padding: 0 20px 20px 0; }
+
+.grid-of-cards .card {
+  position: relative;
+  width: calc(100% / 3 - 60px);
+  margin: 10px;
+  -webkit-box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 0 0 20px 20px;
+  padding: 36px 20px 40px;
+  text-align: left;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  .grid-of-cards .card:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 4px;
+    top: 0;
+    left: 0;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease; }
+  .grid-of-cards .card.content-center:not(.video) {
+    text-align: center; }
+  .grid-of-cards .card h3 {
+    margin: 0 0 20px;
+    font-size: 22px; }
+  .grid-of-cards .card p {
+    margin: 0;
+    font-size: 16px;
+    color: #848484; }
+  .grid-of-cards .card.yellow:before {
+    background: #FFF3D4; }
+  .grid-of-cards .card.blue:before {
+    background: #D9EBF5; }
+  .grid-of-cards .card.green:before {
+    background: #D9F1E5; }
+  .grid-of-cards .card.link:hover, .grid-of-cards .card.link:focus, .grid-of-cards .card.video:hover, .grid-of-cards .card.video:focus {
+    padding-top: 34px;
+    outline: none;
+    -webkit-transform: translateY(-6px);
+            transform: translateY(-6px);
+    -webkit-box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1); }
+    .grid-of-cards .card.link:hover:before, .grid-of-cards .card.link:focus:before, .grid-of-cards .card.video:hover:before, .grid-of-cards .card.video:focus:before {
+      height: 6px; }
+    .grid-of-cards .card.link:hover.yellow:before, .grid-of-cards .card.link:focus.yellow:before, .grid-of-cards .card.video:hover.yellow:before, .grid-of-cards .card.video:focus.yellow:before {
+      background: #FDC526; }
+    .grid-of-cards .card.link:hover.blue:before, .grid-of-cards .card.link:focus.blue:before, .grid-of-cards .card.video:hover.blue:before, .grid-of-cards .card.video:focus.blue:before {
+      background: #0277BD; }
+    .grid-of-cards .card.link:hover.green:before, .grid-of-cards .card.link:focus.green:before, .grid-of-cards .card.video:hover.green:before, .grid-of-cards .card.video:focus.green:before {
+      background: #43B77D; }
+  .grid-of-cards .card.link:after {
+    display: inline-block;
+    position: absolute;
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 900;
+    font-size: 24px;
+    right: 40px;
+    bottom: 15px;
+    content: '\f061';
+    color: #0277BD;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease; }
+  .grid-of-cards .card.link:hover:after, .grid-of-cards .card.link:focus:after {
+    opacity: 1;
+    visibility: visible;
+    right: 20px; }
+  .grid-of-cards .card.video {
+    width: calc(100% / 3 - 20px); }
+    .grid-of-cards .card.video h3 {
+      width: calc(100% - 40px); }
+    .grid-of-cards .card.video:after {
+      display: inline-block;
+      position: absolute;
+      font-family: "Font Awesome 5 Free";
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font-weight: 400;
+      font-size: 24px;
+      right: 20px;
+      top: 34px;
+      content: '\f144';
+      color: #3F3F3F;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease; }
+    .grid-of-cards .card.video:hover:after, .grid-of-cards .card.video:focus:after {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1); }
+
+@media screen and (max-width: 1024px) {
+  .grid-of-cards .card.link:after {
+    opacity: 0.5;
+    visibility: visible;
+    right: 20px;
+    font-size: 20px; } }
+
+@media screen and (max-width: 950px) {
+  .grid-of-cards .cards-wrapper .title-wrapper {
+    width: calc(50% - 40px); }
+  .grid-of-cards .card {
+    width: calc(50% - 60px); }
+    .grid-of-cards .card.video {
+      width: calc(50% - 20px); } }
+
+@media screen and (max-width: 767px) {
+  .grid-of-cards .title-wrapper.center {
+    text-align: left; }
+  .grid-of-cards .cards-wrapper {
+    margin: 0; }
+  .grid-of-cards .card,
+  .grid-of-cards .card.video,
+  .grid-of-cards .cards-wrapper .title-wrapper {
+    width: 100%;
+    margin: 10px 0; }
+  .grid-of-cards .card h3 {
+    font-size: 20px; } }

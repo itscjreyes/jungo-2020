@@ -184,3 +184,22 @@ function staticBar(){
 }
 
 document.addEventListener("DOMContentLoaded", staticBar());
+
+function vidyardLightbox(){
+    const videoCards = document.querySelectorAll('.card.video');
+    videoCards.forEach(function(card){
+        card.addEventListener('click', function(e){
+            e.preventDefault();
+            console.log(e.target)
+        })
+    })
+
+    function launchLightbox(val) {
+        console.log('hello')
+        var players = VidyardV4.api.getPlayersByUUID(val);
+        var player = players[0];
+        player.showLightbox();
+    }
+}
+
+// document.addEventListener("DOMContentLoaded", vidyardLightbox());
