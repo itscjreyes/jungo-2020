@@ -824,6 +824,9 @@ footer {
     transition: all 0.2s ease; }
   .grid-of-cards .card.content-center:not(.video) {
     text-align: center; }
+    .grid-of-cards .card.content-center:not(.video) p {
+      max-width: 300px;
+      margin: auto; }
   .grid-of-cards .card h3 {
     margin: 0 0 20px;
     font-size: 22px; }
@@ -925,3 +928,125 @@ footer {
     margin: 10px 0; }
   .grid-of-cards .card h3 {
     font-size: 20px; } }
+
+.testimonial-slider .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  max-width: 1100px; }
+
+.testimonial-slider .title-wrapper {
+  max-width: 350px; }
+  .testimonial-slider .title-wrapper h2 {
+    font-size: 60px; }
+
+.testimonial-slider .slider-wrapper {
+  position: relative;
+  width: calc(100% - 500px); }
+  .testimonial-slider .slider-wrapper p {
+    margin: 0; }
+  .testimonial-slider .slider-wrapper p.quote {
+    font-size: 20px; }
+  .testimonial-slider .slider-wrapper .logo-author {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-top: 30px; }
+    .testimonial-slider .slider-wrapper .logo-author img {
+      max-height: 40px; }
+  .testimonial-slider .slider-wrapper .quote-author {
+    margin-left: 30px; }
+    .testimonial-slider .slider-wrapper .quote-author p {
+      font-size: 16px;
+      line-height: 1.2; }
+  .testimonial-slider .slider-wrapper p.author-name {
+    font-weight: 600; }
+
+.testimonial-slider ul.slick-dots {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: -80px; }
+  .testimonial-slider ul.slick-dots li {
+    display: block; }
+    .testimonial-slider ul.slick-dots li button {
+      position: relative;
+      background: transparent;
+      color: transparent;
+      border: 0;
+      border-radius: 50%;
+      outline: 0;
+      height: 15px;
+      margin: 5px 0;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease; }
+      .testimonial-slider ul.slick-dots li button:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 15px;
+        width: 15px;
+        border-radius: 30px;
+        background: transparent;
+        border: 2px solid #0277BD;
+        -webkit-transition: all .3s ease;
+        transition: all .3s ease;
+        opacity: 0.6; }
+      .testimonial-slider ul.slick-dots li button:hover:after, .testimonial-slider ul.slick-dots li button:focus:after {
+        background: #0277BD; }
+    .testimonial-slider ul.slick-dots li.slick-active button {
+      height: 30px; }
+      .testimonial-slider ul.slick-dots li.slick-active button:after {
+        height: 30px;
+        background: #0277BD;
+        opacity: 1; }
+
+@media screen and (max-width: 950px) {
+  .testimonial-slider .container {
+    display: block; }
+  .testimonial-slider .slider-wrapper {
+    width: 100%; }
+  .testimonial-slider ul.slick-dots {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 40px; }
+    .testimonial-slider ul.slick-dots li {
+      display: inline-block; }
+      .testimonial-slider ul.slick-dots li button {
+        margin: 0 20px 0 0;
+        width: 20px;
+        height: 20px; }
+        .testimonial-slider ul.slick-dots li button:after {
+          width: 20px;
+          height: 20px; }
+      .testimonial-slider ul.slick-dots li.slick-active button,
+      .testimonial-slider ul.slick-dots li.slick-active button:after {
+        height: 20px;
+        width: 35px; } }
+
+@media screen and (max-width: 415px) {
+  .testimonial-slider .title-wrapper h2 {
+    font-size: 50px; }
+  .testimonial-slider .slider-wrapper .logo-author {
+    display: block; }
+    .testimonial-slider .slider-wrapper .logo-author img {
+      max-height: 30px; }
+  .testimonial-slider .slider-wrapper .quote-author {
+    margin: 20px 0 0 0; } }

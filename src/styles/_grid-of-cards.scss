@@ -48,6 +48,11 @@
 
         &.content-center:not(.video) {
             text-align: center;
+
+            p {
+                max-width: 300px;
+                margin: auto;
+            }
         }
 
         h3 {

@@ -185,21 +185,25 @@ function staticBar(){
 
 document.addEventListener("DOMContentLoaded", staticBar());
 
-function vidyardLightbox(){
-    const videoCards = document.querySelectorAll('.card.video');
-    videoCards.forEach(function(card){
-        card.addEventListener('click', function(e){
-            e.preventDefault();
-            console.log(e.target)
-        })
-    })
-
-    function launchLightbox(val) {
-        console.log('hello')
-        var players = VidyardV4.api.getPlayersByUUID(val);
-        var player = players[0];
-        player.showLightbox();
-    }
+function slider(){
+    $('.testimonial-slider .slider-wrapper').slick({
+        dots: true,
+        arrows: false,
+        infinite: true,
+        fade: true,
+        autoplay: true,
+        verticalSwiping: true,
+        responsive: [
+            {
+              breakpoint: 950,
+              settings: {
+                verticalSwiping: false,
+                adaptiveHeight: true,
+                autoplay: false
+              }
+            }
+          ]
+    });
 }
 
-// document.addEventListener("DOMContentLoaded", vidyardLightbox());
+document.addEventListener("DOMContentLoaded", slider());

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="dist/main.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <script type="text/javascript" async src="https://play.vidyard.com/embed/v4.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" />
     <title>Localhost: JungoHR</title>
 </head>
 <body>
@@ -171,7 +172,7 @@
         <div class="cards-wrapper">
           <div class="title-wrapper">
             <h2 class="caption">Features</h2>
-            <h3 class="title">How can the JungoHR Hub help you?</h3>
+            <h3 class="title">Our service sets us apart</h3>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto laudantium nostrum laborum obcaecati perspiciatis porro!</p>
           </div>
           <div class="card green">
@@ -191,10 +192,6 @@
             <h3>Organizational Policies</h3>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam laudantium itaque nemo sed pariatur inventore suscipit quia sit asperiores perferendis?</p>
           </button>
-          <div class="card green">
-            <h3>Benefits Expertise</h3>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam laudantium itaque nemo sed pariatur inventore suscipit quia sit asperiores perferendis?</p>
-          </div>
           <a href="#" class="card link content-center yellow">
             <h3>HRIS</h3>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam laudantium itaque nemo sed pariatur inventore suscipit quia sit asperiores perferendis?</p>
@@ -208,6 +205,56 @@
             <h3>Organizational Policies</h3>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam laudantium itaque nemo sed pariatur inventore suscipit quia sit asperiores perferendis?</p>
           </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonial-slider">
+      <div class="container">
+        <div class="title-wrapper">
+          <h2>What users are saying</h2>
+        </div>
+        <div class="slider-wrapper">
+          <div class="slide">
+            <p class="quote">“JungoHR has streamlined our processes, from handling leaves to onboarding and staff communications, it has greatly reduced the workload for our HR and Accounting departments. The Jungo team has always been quick to respond to questions and is continuously looking for solutions specific to our companies needs.”</p>
+            <div class="logo-author">
+              <img src="https://www.jungohr.ca/hubfs/thumbnail_image003-1.png" alt="Shostak Automotive Group">
+              <div class="quote-author">
+                <p class="author-name">Chantelle Gardner</p>
+                <p class="author-title">Human Resources Manager</p>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <p class="quote">“Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur mollitia sint ex, a ipsam explicabo unde quam atque nihil aliquam!”</p>
+            <div class="logo-author">
+              <img src="https://www.jungohr.ca/hubfs/thumbnail_image003-1.png" alt="Shostak Automotive Group">
+              <div class="quote-author">
+                <p class="author-name">Chantelle Gardner</p>
+                <p class="author-title">Human Resources Manager</p>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <p class="quote">“Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio unde, explicabo cum assumenda cumque perferendis nisi libero. Architecto blanditiis officiis iste quas nostrum dolorum ratione quis, atque eum, veritatis vero.”</p>
+            <div class="logo-author">
+              <img src="https://www.jungohr.ca/hubfs/thumbnail_image003-1.png" alt="Shostak Automotive Group">
+              <div class="quote-author">
+                <p class="author-name">Chantelle Gardner</p>
+                <p class="author-title">Human Resources Manager</p>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <p class="quote">“Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit consectetur vero dolor, assumenda laborum itaque amet! Ex obcaecati, molestiae fugiat libero accusantium quisquam veniam nostrum, unde doloremque recusandae facere earum eaque? Pariatur, animi hic? Veritatis assumenda sunt at nemo pariatur.”</p>
+            <div class="logo-author">
+              <img src="https://www.jungohr.ca/hubfs/thumbnail_image003-1.png" alt="Shostak Automotive Group">
+              <div class="quote-author">
+                <p class="author-name">Chantelle Gardner</p>
+                <p class="author-title">Human Resources Manager</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -278,7 +325,6 @@
 
     <script>
       function launchLightbox(val) {
-        console.log('hello')
         var players = VidyardV4.api.getPlayersByUUID(val);
         var player = players[0];
         player.showLightbox();
@@ -287,6 +333,7 @@
     
     <script src="http://afarkas.github.io/lazysizes/lazysizes.min.js" async=""></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="dist/main.js"></script>
 </body>
 </html>
