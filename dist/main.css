@@ -1112,3 +1112,12 @@ footer {
     max-height: 30px;
     max-width: 150px;
     margin: 0 15px 15px 0; } }
+
+.center-cta {
+  text-align: center; }
+  .center-cta .title,
+  .center-cta p {
+    margin-left: auto;
+    margin-right: auto; }
+  .center-cta .btn-group {
+    margin-top: 30px; }
