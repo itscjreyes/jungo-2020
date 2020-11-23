@@ -11,7 +11,7 @@ body {
 
 .container {
   max-width: 1600px;
-  padding: 60px 4%;
+  padding: 100px 4%;
   margin: auto; }
 
 .banner {
@@ -122,11 +122,19 @@ button {
 .vidyard-player-wrapper--hidden {
   display: none; }
 
+@media screen and (max-width: 1600px) {
+  .container {
+    padding-top: 60px;
+    padding-bottom: 60px; } }
+
 @media screen and (max-width: 1024px) {
   .banner .container {
     padding-top: 140px; } }
 
 @media screen and (max-width: 415px) {
+  .container {
+    padding-top: 50px;
+    padding-bottom: 50px; }
   .title {
     font-size: 32px; } }
 
@@ -705,7 +713,8 @@ footer {
     width: 50%;
     text-align: center; }
     .banner-home .img-wrapper img {
-      width: 350px; }
+      width: 350px;
+      margin: auto; }
 
 @media screen and (max-width: 1024px) {
   .banner-home .content-wrapper {
@@ -1261,3 +1270,50 @@ footer {
       font-size: 26px; }
   .mission-block .img-wrapper {
     display: none; } }
+
+.about-signature .card-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background: white;
+  -webkit-box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 60px; }
+
+.about-signature .title-wrapper {
+  width: 40%; }
+  .about-signature .title-wrapper h2 {
+    font-size: 30px;
+    line-height: 1.4; }
+  .about-signature .title-wrapper .highlight {
+    color: #0277BD;
+    border-bottom: 3px solid #FDC526; }
+
+.about-signature .content-wrapper {
+  width: 55%; }
+  .about-signature .content-wrapper p:first-of-type {
+    margin-top: 0; }
+  .about-signature .content-wrapper img {
+    width: 100px; }
+
+@media screen and (max-width: 1100px) {
+  .about-signature .title-wrapper h2 {
+    font-size: 24px; } }
+
+@media screen and (max-width: 767px) {
+  .about-signature .card-wrapper {
+    display: block;
+    padding: 30px; }
+  .about-signature .title-wrapper,
+  .about-signature .content-wrapper {
+    width: 100%; }
+  .about-signature .title-wrapper h2 {
+    margin-bottom: 30px;
+    font-size: 22px; } }

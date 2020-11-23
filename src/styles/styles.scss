@@ -24,7 +24,7 @@ body {
 
 .container {
     max-width: 1600px;
-    padding: 60px 4%;
+    padding: 100px 4%;
     margin: auto;
 }
 
@@ -162,6 +162,13 @@ button {
     display: none;
 }
 
+@media screen and (max-width: 1600px) {
+    .container {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     .banner {
         .container {
@@ -171,6 +178,11 @@ button {
 }
 
 @media screen and (max-width: 415px) {
+    .container {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
     .title {
         font-size: 32px;
     }
@@ -188,3 +200,4 @@ button {
 @import './image-banner';
 @import './two-column-content';
 @import './mission-block';
+@import './about-signature.scss';
