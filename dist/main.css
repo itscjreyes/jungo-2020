@@ -1050,3 +1050,65 @@ footer {
       max-height: 30px; }
   .testimonial-slider .slider-wrapper .quote-author {
     margin: 20px 0 0 0; } }
+
+.mission-brands .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse; }
+
+.mission-brands .img-wrapper {
+  width: 50%; }
+  .mission-brands .img-wrapper img {
+    display: block; }
+
+.mission-brands .content-wrapper {
+  width: 40%; }
+  .mission-brands .content-wrapper h2 {
+    font-size: 24px;
+    line-height: 1.4; }
+
+.mission-brands .brands-section {
+  margin-top: 60px; }
+  .mission-brands .brands-section p {
+    font-weight: 600; }
+
+.mission-brands .brands-wrapper {
+  margin-top: 30px; }
+  .mission-brands .brands-wrapper img {
+    display: inline-block;
+    vertical-align: middle;
+    max-height: 40px;
+    max-width: 175px;
+    margin: 0 20px 20px 0; }
+
+@media screen and (max-width: 950px) {
+  .mission-brands .container {
+    display: block; }
+  .mission-brands .img-wrapper {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 40px; }
+  .mission-brands .content-wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin: auto; } }
+
+@media screen and (max-width: 415px) {
+  .mission-brands .content-wrapper h2 {
+    font-size: 20px; }
+  .mission-brands .brands-section {
+    margin-top: 40px; }
+  .mission-brands .brands-wrapper img {
+    max-height: 30px;
+    max-width: 150px;
+    margin: 0 15px 15px 0; } }

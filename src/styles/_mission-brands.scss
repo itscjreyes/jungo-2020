@@ -1,0 +1,87 @@
+.mission-brands {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: row-reverse;
+    }
+
+    .img-wrapper {
+        width: 50%;
+
+        img {
+            display: block;
+        }
+    }
+
+    .content-wrapper {
+        width: 40%;
+
+        h2 {
+            font-size: 24px;
+            line-height: 1.4;
+        }
+    }
+
+    .brands-section {
+        margin-top: 60px;
+
+        p {
+            font-weight: 600;
+        }
+    }
+
+    .brands-wrapper {
+        margin-top: 30px;
+
+        img {
+            display: inline-block;
+            vertical-align: middle;
+            max-height: 40px;
+            max-width: 175px;
+            margin: 0 20px 20px 0;
+        }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .mission-brands {
+        .container {
+            display: block;
+        }
+
+        .img-wrapper {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto 40px;
+        }
+
+        .content-wrapper {
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+        }
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .mission-brands {
+        .content-wrapper {
+            h2 {
+                font-size: 20px;
+            }
+        }
+
+        .brands-section {
+            margin-top: 40px;
+        }
+
+        .brands-wrapper {
+            img {
+                max-height: 30px;
+                max-width: 150px;
+                margin: 0 15px 15px 0;
+            }
+        }
+    }
+}
