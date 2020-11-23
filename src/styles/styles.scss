@@ -79,6 +79,12 @@ a {
     margin: 0 0 30px;
 }
 
+.img-wrapper {
+    img {
+        display: block;
+    }
+}
+
 img {
     max-width: 100%;
 }
@@ -181,3 +187,4 @@ button {
 @import './center-cta';
 @import './image-banner';
 @import './two-column-content';
+@import './mission-block';

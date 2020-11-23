@@ -55,6 +55,9 @@ a {
   line-height: 1.2;
   margin: 0 0 30px; }
 
+.img-wrapper img {
+  display: block; }
+
 img {
   max-width: 100%; }
 
@@ -734,8 +737,6 @@ footer {
 
 .image-and-content .img-wrapper {
   width: 50%; }
-  .image-and-content .img-wrapper img {
-    display: block; }
 
 .image-and-content .content-wrapper {
   width: 40%; }
@@ -1068,8 +1069,6 @@ footer {
 
 .mission-brands .img-wrapper {
   width: 50%; }
-  .mission-brands .img-wrapper img {
-    display: block; }
 
 .mission-brands .content-wrapper {
   width: 40%; }
@@ -1208,3 +1207,57 @@ footer {
   .two-column-content.center:not(.title-left) .title-wrapper,
   .two-column-content.center:not(.title-left) .btn-group {
     text-align: left; } }
+
+.mission-block .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+
+.mission-block .content-wrapper {
+  background: #0277BD;
+  padding: 60px 40px;
+  border-radius: 5px 0 0 5px;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
+  width: calc(100% - 500px); }
+  .mission-block .content-wrapper h2 {
+    font-size: 40px;
+    color: white;
+    margin: 0;
+    line-height: 1.4;
+    max-width: 900px; }
+
+.mission-block .img-wrapper {
+  width: 500px; }
+
+@media screen and (max-width: 1100px) {
+  .mission-block .container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .mission-block .content-wrapper {
+    width: calc(100% - 350px);
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  .mission-block .img-wrapper {
+    width: 350px; } }
+
+@media screen and (max-width: 1024px) {
+  .mission-block .content-wrapper h2 {
+    font-size: 30px; } }
+
+@media screen and (max-width: 767px) {
+  .mission-block .content-wrapper {
+    width: 100%;
+    border-radius: 5px;
+    padding: 30px; }
+    .mission-block .content-wrapper h2 {
+      font-size: 26px; }
+  .mission-block .img-wrapper {
+    display: none; } }
