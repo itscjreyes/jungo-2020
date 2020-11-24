@@ -1,0 +1,15 @@
+.center-content {
+    text-align: center;
+
+    .title,
+    p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .center-content {
+        text-align: left;
+    }
+}

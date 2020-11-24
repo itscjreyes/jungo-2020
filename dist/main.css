@@ -1525,3 +1525,14 @@ footer {
 @media screen and (max-width: 415px) {
   .integrations .logo-wrapper {
     margin-top: 30px; } }
+
+.center-content {
+  text-align: center; }
+  .center-content .title,
+  .center-content p {
+    margin-left: auto;
+    margin-right: auto; }
+
+@media screen and (max-width: 415px) {
+  .center-content {
+    text-align: left; } }
