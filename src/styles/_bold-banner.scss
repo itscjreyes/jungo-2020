@@ -1,0 +1,31 @@
+.bold-banner {
+    background: $blue;
+    text-align: center;
+
+    .container {
+        padding-bottom: 0;
+    }
+
+    .title {
+        font-size: 50px;
+        color: white;
+        margin-left: auto;
+        margin-right: auto
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .bold-banner {
+        .title {
+            font-size: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .bold-banner {
+        .title {
+            font-size: 30px;
+        }
+    }
+}
