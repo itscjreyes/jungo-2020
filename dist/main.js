@@ -210,7 +210,6 @@ document.addEventListener("DOMContentLoaded", slider());
 
 
 function moduleNav(){
-    console.log(window.innerWidth)
     if (window.innerWidth < 500) {
         $('.main-module-nav .main-item button').on('click', function(e){
             const parent = $(e.target.closest('button')).parent();
@@ -255,3 +254,12 @@ function moduleNav(){
 }
 
 document.addEventListener("DOMContentLoaded", moduleNav());
+
+function accordion(){
+    $('.accordion-item button').on('click', function(){
+        $(this).parent().toggleClass('active');
+        $(this).parent().find('.inner-content').slideToggle();
+    })
+}
+
+document.addEventListener("DOMContentLoaded", accordion());

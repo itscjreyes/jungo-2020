@@ -214,7 +214,7 @@ header.navigation {
     header.navigation .main-nav.sticky {
       position: fixed;
       background: white;
-      border-bottom: 1px solid #F2F8FC; }
+      border-bottom: 1px solid #CCE4F2; }
       header.navigation .main-nav.sticky .container {
         padding-top: 10px;
         padding-bottom: 10px; }
@@ -342,7 +342,7 @@ header.navigation {
       border-radius: 5px;
       border-bottom: 1px solid #EDEDED; }
       header.navigation .sub-item a:hover, header.navigation .sub-item a:focus {
-        background: #F2F8FC; }
+        background: #CCE4F2; }
     header.navigation .sub-item:last-child a {
       border-bottom: 0; }
   header.navigation .mobile-trigger {
@@ -847,7 +847,7 @@ footer {
   .grid-of-cards .card.yellow:before {
     background: #FFF3D4; }
   .grid-of-cards .card.blue:before {
-    background: #F2F8FC; }
+    background: #CCE4F2; }
   .grid-of-cards .card.green:before {
     background: #D9F1E5; }
   .grid-of-cards .card.link:hover, .grid-of-cards .card.link:focus, .grid-of-cards .card.video:hover, .grid-of-cards .card.video:focus {
@@ -1548,7 +1548,8 @@ footer {
   visibility: hidden;
   opacity: 0;
   -webkit-transition: all 0.2s ease;
-  transition: all 0.2s ease; }
+  transition: all 0.2s ease;
+  z-index: 4; }
   .module-nav.sticky {
     top: 90px;
     visibility: visible;
@@ -1782,3 +1783,92 @@ ul.main-module-nav {
     padding: 40px;
     -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); } }
+
+.accordion .title-wrapper {
+  text-align: center; }
+  .accordion .title-wrapper .title,
+  .accordion .title-wrapper p {
+    margin-left: auto;
+    margin-right: auto; }
+
+.accordion-wrapper {
+  max-width: 850px;
+  margin: 40px auto 0; }
+
+.accordion-item {
+  background: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  .accordion-item:not(.active):hover {
+    background: #F2F8FC; }
+  .accordion-item button {
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 100%;
+    text-align: left; }
+    .accordion-item button:focus,
+    .accordion-item button h3:focus {
+      outline: none; }
+    .accordion-item button:focus > h3 {
+      -webkit-box-shadow: 0 0 2px 2px #51a7e8;
+              box-shadow: 0 0 2px 2px #51a7e8; }
+    .accordion-item button:before {
+      position: absolute;
+      content: "";
+      height: 1px;
+      width: calc(100% - 60px);
+      background: #EDEDED;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease; }
+    .accordion-item button:after {
+      position: absolute;
+      font-family: "Font Awesome 5 Free";
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      font-weight: 900;
+      font-size: 30px;
+      content: '\f0d7';
+      color: #0277BD;
+      right: 30px;
+      top: 25px;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease; }
+    .accordion-item button h3 {
+      font-size: 24px;
+      margin: 0;
+      padding: 30px 50px 30px 30px; }
+  .accordion-item .inner-content {
+    display: none;
+    padding: 30px; }
+    .accordion-item .inner-content p:first-of-type {
+      margin-top: 0; }
+  .accordion-item.active {
+    -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05); }
+    .accordion-item.active button:before {
+      opacity: 1; }
+    .accordion-item.active button:after {
+      -webkit-transform: rotateX(180deg);
+              transform: rotateX(180deg); }
+
+@media screen and (max-width: 767px) {
+  .accordion-item {
+    margin-bottom: 20px; }
+    .accordion-item button h3 {
+      font-size: 20px; }
+    .accordion-item.active {
+      -webkit-transform: scale(1.02);
+              transform: scale(1.02); } }

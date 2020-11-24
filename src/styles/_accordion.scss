@@ -1,0 +1,120 @@
+.accordion {
+    .title-wrapper {
+        text-align: center;
+
+        .title,
+        p {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.accordion-wrapper {
+    max-width: 850px;
+    margin: 40px auto 0;
+}
+
+.accordion-item {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    transition: all 0.2s ease;
+
+    &:not(.active):hover {
+        background: $blue--light;
+    }
+
+    button {
+        position: relative;
+        display: block;
+        margin: 0;
+        width: 100%;
+        text-align: left;
+
+        &:focus,
+        h3:focus {
+            outline: none;
+        }
+
+        &:focus > h3  {
+            box-shadow: 0 0 2px 2px #51a7e8;
+        } 
+
+        &:before {
+            position: absolute;
+            content: "";
+            height: 1px;
+            width: calc(100% - 60px);
+            background: #EDEDED;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transition: all 0.2s ease;
+        }
+
+        &:after {
+            position: absolute;
+            font-family: "Font Awesome 5 Free";
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 900;
+            font-size: 30px;
+            content: '\f0d7';
+            color: $blue;
+            right: 30px;
+            top: 25px;
+            transition: all 0.2s ease;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin: 0;
+            padding: 30px 50px 30px 30px;
+        }
+    }
+
+    .inner-content {
+        display: none;
+        padding: 30px;
+
+        p:first-of-type {
+            margin-top: 0;
+        }
+    }
+
+    &.active {
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        transform: scale(1.05);
+
+        button {
+            &:before {
+                opacity: 1;
+            }
+
+            &:after {
+                transform: rotateX(180deg);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .accordion-item {
+        margin-bottom: 20px;
+
+        button {
+            h3 {
+                font-size: 20px;
+            }
+        }
+
+        &.active {
+            transform: scale(1.02);
+        }
+    }
+}

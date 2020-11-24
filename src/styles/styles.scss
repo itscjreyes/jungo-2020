@@ -6,7 +6,7 @@ $yellow: #FDC526;
 $blue--light: #F2F8FC;
 $black: #3F3F3F;
 $green: #43B77D;
-$blue--20: #F2F8FC;
+$blue--20: #CCE4F2;
 $green--20: #D9F1E5;
 $yellow--20: #FFF3D4;
 
@@ -213,3 +213,4 @@ button {
 @import './feature-intro';
 @import './feature-stats';
 @import './feature-grid-of-cards';
+@import './accordion';
