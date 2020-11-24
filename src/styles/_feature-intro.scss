@@ -1,0 +1,15 @@
+.feature-intro {
+    .content-wrapper {
+        width: 45%;
+        max-width: 700px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .feature-intro {
+        .content-wrapper {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}
