@@ -1378,3 +1378,90 @@ footer {
 @media screen and (max-width: 415px) {
   .blue-banner-simple .title {
     font-size: 30px; } }
+
+.grid-of-stats {
+  text-align: center; }
+  .grid-of-stats ul.grid-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 0;
+    margin: 60px auto 80px;
+    max-width: 850px; }
+  .grid-of-stats li.stat-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-weight: 600;
+    line-height: 1.2;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    height: 250px;
+    margin: 10px; }
+    .grid-of-stats li.stat-card .lg {
+      display: block;
+      font-size: 60px; }
+    .grid-of-stats li.stat-card .sm {
+      font-size: 30px; }
+    .grid-of-stats li.stat-card.yellow {
+      background: #FDC526; }
+    .grid-of-stats li.stat-card.blue {
+      background: #0277BD;
+      color: white; }
+    .grid-of-stats li.stat-card:nth-child(even) {
+      -webkit-transform: translateY(80px);
+              transform: translateY(80px); }
+
+@media screen and (max-width: 950px) {
+  .grid-of-stats li.stat-card {
+    width: 300px;
+    height: 200px; }
+    .grid-of-stats li.stat-card .lg {
+      font-size: 44px; }
+    .grid-of-stats li.stat-card .sm {
+      font-size: 24px; } }
+
+@media screen and (max-width: 767px) {
+  .grid-of-stats li.stat-card {
+    width: calc(50% - 60px);
+    height: 150px;
+    padding: 20px; }
+    .grid-of-stats li.stat-card .lg {
+      font-size: 30px; }
+    .grid-of-stats li.stat-card .sm {
+      font-size: 18px; } }
+
+@media screen and (max-width: 415px) {
+  .grid-of-stats ul.grid-wrapper {
+    margin: 40px auto; }
+  .grid-of-stats li.stat-card {
+    width: calc(50% - 50px);
+    height: 100px;
+    margin: 5px; }
+    .grid-of-stats li.stat-card .lg {
+      font-size: 24px; }
+    .grid-of-stats li.stat-card .sm {
+      font-size: 14px; }
+    .grid-of-stats li.stat-card:nth-child(even) {
+      -webkit-transform: translateY(40px);
+              transform: translateY(40px); } }

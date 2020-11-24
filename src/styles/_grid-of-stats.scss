@@ -1,0 +1,110 @@
+.grid-of-stats {
+    text-align: center;
+
+    ul.grid-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: 60px auto 80px;
+        max-width: 850px;
+    }
+
+    li.stat-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-weight: 600;
+        line-height: 1.2;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        width: 400px;
+        height: 250px;
+        margin: 10px;
+
+        .lg {
+            display: block;
+            font-size: 60px;
+        }
+
+        .sm {
+            font-size: 30px;
+        }
+
+        &.yellow {
+            background: $yellow;
+        }
+
+        &.blue {
+            background: $blue;
+            color: white;
+        }
+
+        &:nth-child(even) {
+            transform: translateY(80px);
+        }
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .grid-of-stats {
+        li.stat-card {
+            width: 300px;
+            height: 200px;
+
+            .lg {
+                font-size: 44px;
+            }
+    
+            .sm {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .grid-of-stats {
+        li.stat-card {
+            width: calc(50% - 60px);
+            height: 150px;
+            padding: 20px;
+
+            .lg {
+                font-size: 30px;
+            }
+    
+            .sm {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .grid-of-stats {
+        ul.grid-wrapper {
+            margin: 40px auto;
+        }
+
+        li.stat-card {
+            width: calc(50% - 50px);
+            height: 100px;
+            margin: 5px;
+
+            .lg {
+                font-size: 24px;
+            }
+    
+            .sm {
+                font-size: 14px;
+            }
+
+            &:nth-child(even) {
+                transform: translateY(40px);
+            }
+        }
+    }
+}
