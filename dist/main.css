@@ -1509,3 +1509,19 @@ footer {
     -webkit-column-gap: 0;
        -moz-column-gap: 0;
             column-gap: 0; } }
+
+.integrations {
+  text-align: center; }
+  .integrations p.description {
+    margin-left: auto;
+    margin-right: auto; }
+  .integrations .logo-wrapper {
+    margin-top: 60px; }
+    .integrations .logo-wrapper img {
+      display: inline-block;
+      margin: 5px;
+      max-height: 60px; }
+
+@media screen and (max-width: 415px) {
+  .integrations .logo-wrapper {
+    margin-top: 30px; } }
