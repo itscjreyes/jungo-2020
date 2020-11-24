@@ -153,3 +153,73 @@ function mobileNav(){
 }
 
 document.addEventListener("DOMContentLoaded", navigation());
+
+function staticBar(){
+    var staticBarBtn = document.querySelectorAll('button.close-static-bar');
+
+    function staticBarBtnClick(e){
+    e.preventDefault();
+    var target = e.target.closest('button');
+    var storageItem = 'static-bar-' + target.id;
+    localStorage.setItem(storageItem, 'closed');
+    var parentBar = target.closest('button').parentNode.parentNode;
+    parentBar.style.display = 'none';
+    }
+
+    var covidBarStatus = localStorage.getItem('static-bar-covid-bar');
+
+    if (covidBarStatus == 'closed') {
+    document.querySelector('.static-bar[data-id="covid-bar"]').style.display = 'none';
+    }
+
+    var cookieBarStatus = localStorage.getItem('static-bar-cookie-bar');
+
+    if (cookieBarStatus == 'closed') {
+    document.querySelector('.static-bar[data-id="cookie-bar"]').style.display = 'none';
+    }
+
+    staticBarBtn.forEach(function(btn){
+    btn.addEventListener('click', staticBarBtnClick);
+    })
+}
+
+document.addEventListener("DOMContentLoaded", staticBar());
+
+function slider(){
+    $('.testimonial-slider .slider-wrapper').slick({
+        dots: true,
+        arrows: false,
+        infinite: true,
+        fade: true,
+        autoplay: true,
+        verticalSwiping: true,
+        responsive: [
+            {
+              breakpoint: 950,
+              settings: {
+                verticalSwiping: false,
+                adaptiveHeight: true,
+                autoplay: false
+              }
+            }
+          ]
+    });
+}
+
+document.addEventListener("DOMContentLoaded", slider());
+
+
+function moduleNav(){
+    console.log('working')
+    $('.main-module-nav .main-item button').on('click', function(e){
+        const parent = $(e.target).parent();
+        if (parent.hasClass('active')) {
+            parent.removeClass('active');
+        } else {
+            $('.main-module-nav .main-item').removeClass('active');
+            parent.addClass('active');
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", moduleNav());
