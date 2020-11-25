@@ -2214,7 +2214,6 @@ li.resource-card {
     .main-lp-content-form .content-wrapper {
       width: 100%; }
     .main-lp-content-form .form-wrapper {
-      max-width: 400px;
       margin: 0 auto 60px; } }
 
 .main-lp-center-content {
@@ -2320,3 +2319,39 @@ li.resource-card {
     margin-left: 0px; }
   .offer-lp-banner .title {
     font-size: 26px; } }
+
+.offer-lp-content-form {
+  background: #F2F8FC; }
+  .offer-lp-content-form .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+  .offer-lp-content-form .content-wrapper {
+    width: 45%; }
+    .offer-lp-content-form .content-wrapper ul {
+      padding-left: 20px; }
+      .offer-lp-content-form .content-wrapper ul li {
+        padding: 10px 0; }
+
+@media screen and (max-width: 1200px) {
+  .offer-lp-content-form .content-wrapper {
+    width: calc(85% - 400px); }
+  .offer-lp-content-form .form-wrapper {
+    max-width: 400px; } }
+
+@media screen and (max-width: 950px) {
+  .offer-lp-content-form .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse; }
+  .offer-lp-content-form .content-wrapper {
+    width: 100%; }
+  .offer-lp-content-form .form-wrapper {
+    margin: 0 auto 60px; } }
