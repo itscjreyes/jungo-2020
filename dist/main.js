@@ -290,3 +290,27 @@ function resourcesFilters(){
 }
 
 document.addEventListener("DOMContentLoaded", resourcesFilters());
+
+function popupForm(){
+    $('.form-popup-trigger').on('click', function(e){
+        const popupId = e.target.dataset.id;
+        const popup = document.querySelector(`.popup-form[data-popupid="${popupId}"]`);
+        const allPopups = document.querySelectorAll('.popup-form');
+        
+        allPopups.forEach(function(popup){
+            popup.classList.remove('active');
+        })
+        
+        popup.classList.add('active')
+    })
+
+    $("body").mouseup(function (e) {
+        var subject = $(".popup-form");
+    
+        if (e.target.id != subject.attr('id') && !subject.has(e.target).length) {
+            subject.removeClass('active')
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", popupForm());

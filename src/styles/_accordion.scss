@@ -26,7 +26,7 @@
         background: $blue--light;
     }
 
-    button {
+    button.accordion-trigger {
         position: relative;
         display: block;
         margin: 0;
@@ -91,7 +91,7 @@
         box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         transform: scale(1.05);
 
-        button {
+        button.accordion-trigger {
             &:before {
                 opacity: 1;
             }
@@ -107,7 +107,7 @@
     .accordion-item {
         margin-bottom: 20px;
 
-        button {
+        button.accordion-trigger {
             h3 {
                 font-size: 20px;
             }

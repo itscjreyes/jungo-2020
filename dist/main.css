@@ -1975,19 +1975,19 @@ ul.main-module-nav {
   transition: all 0.2s ease; }
   .accordion-item:not(.active):hover {
     background: #F2F8FC; }
-  .accordion-item button {
+  .accordion-item button.accordion-trigger {
     position: relative;
     display: block;
     margin: 0;
     width: 100%;
     text-align: left; }
-    .accordion-item button:focus,
-    .accordion-item button h3:focus {
+    .accordion-item button.accordion-trigger:focus,
+    .accordion-item button.accordion-trigger h3:focus {
       outline: none; }
-    .accordion-item button:focus > h3 {
+    .accordion-item button.accordion-trigger:focus > h3 {
       -webkit-box-shadow: 0 0 2px 2px #51a7e8;
               box-shadow: 0 0 2px 2px #51a7e8; }
-    .accordion-item button:before {
+    .accordion-item button.accordion-trigger:before {
       position: absolute;
       content: "";
       height: 1px;
@@ -1999,7 +1999,7 @@ ul.main-module-nav {
       margin: auto;
       -webkit-transition: all 0.2s ease;
       transition: all 0.2s ease; }
-    .accordion-item button:after {
+    .accordion-item button.accordion-trigger:after {
       position: absolute;
       font-family: "Font Awesome 5 Free";
       font-style: normal;
@@ -2014,7 +2014,7 @@ ul.main-module-nav {
       top: 25px;
       -webkit-transition: all 0.2s ease;
       transition: all 0.2s ease; }
-    .accordion-item button h3 {
+    .accordion-item button.accordion-trigger h3 {
       font-size: 24px;
       margin: 0;
       padding: 30px 50px 30px 30px; }
@@ -2028,16 +2028,16 @@ ul.main-module-nav {
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     -webkit-transform: scale(1.05);
             transform: scale(1.05); }
-    .accordion-item.active button:before {
+    .accordion-item.active button.accordion-trigger:before {
       opacity: 1; }
-    .accordion-item.active button:after {
+    .accordion-item.active button.accordion-trigger:after {
       -webkit-transform: rotateX(180deg);
               transform: rotateX(180deg); }
 
 @media screen and (max-width: 767px) {
   .accordion-item {
     margin-bottom: 20px; }
-    .accordion-item button h3 {
+    .accordion-item button.accordion-trigger h3 {
       font-size: 20px; }
     .accordion-item.active {
       -webkit-transform: scale(1.02);
@@ -2419,3 +2419,47 @@ li.resource-card {
     margin: 60px auto 0;
     padding: 40px 20px;
     max-width: 540px; } }
+
+.popup-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
+  .popup-form.active {
+    opacity: 1;
+    visibility: visible; }
+    .popup-form.active .form-wrapper.card {
+      -webkit-transform: scale(1);
+              transform: scale(1); }
+  .popup-form .form-wrapper.card {
+    padding: 30px;
+    width: calc(90% - 60px);
+    max-width: 560px;
+    max-height: 80vh;
+    overflow-y: scroll;
+    border-radius: 0;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9); }
+
+@media screen and (max-width: 415px) {
+  .popup-form .form-wrapper.card {
+    padding: 30px 15px;
+    width: calc(90% - 30px); } }
