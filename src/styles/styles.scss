@@ -188,6 +188,210 @@ button {
     }
 }
 
+.hs-form {
+    max-width: 500px;
+    margin: auto;
+}
+
+.field {
+    margin-bottom: 15px;
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    > label {
+        margin: 5px 10px;
+        line-height: 1.6;
+        font-weight: 600;
+        font-size: 14px;
+    }
+}
+
+input,
+textarea,
+select {
+    border-radius: 2px !important;
+    border: 1px solid #E5E5E5;
+    padding: 15px 20px;
+    background: white;
+    font-family: 'museo-sans', sans-serif;
+
+    &.error {
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+}
+
+.form-columns-1 {
+    .input {
+        margin: 0 10px !important;
+    }
+
+    .hs-form-field:not(.hs-fieldtype-radio):not(.hs-fieldtype-checkbox):not(.hs-fieldtype-booleancheckbox):not(.hs-fieldtype-select) {
+        width: calc(100% - 20px) !important;
+
+        ul.inputs-list.hs-error-msgs li label {
+            width: calc(100% - 11px);
+        }
+    }
+}
+
+.form-columns-2 {
+    .input {
+        margin: 0 10px !important;
+    }
+
+    input {
+        width: calc(100% - 40px) !important;
+    }
+}
+
+.hs-fieldtype-select {
+    .input {
+        position: relative;
+
+        &:after {
+            position: absolute;
+            font-family: "Font Awesome 5 Free";
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-weight: 900;
+            content: "\f0d7";
+            font-weight: 900;
+            top: 15px;
+            right: 15px;
+            color: grey;
+        }
+    }
+}
+
+select {
+    -webkit-appearance: none;
+    width: 100% !important;
+}
+
+textarea {
+    resize: none;
+    min-height: 80px;
+}
+
+ul.inputs-list {
+    padding-left: 0;
+    margin: 10px 0 0;
+
+    li {
+        list-style: none;
+    }
+
+    &.hs-error-msgs {
+        margin-top: 0;
+
+        li label {
+            font-size: 13px;
+            background: #eb3d61;
+            width: calc(100% - 28px);
+            color: white !important;
+            text-shadow: none;
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+            padding: 5px;
+            margin: 0 10px;
+            text-align: left;
+            line-height: 1.2;
+
+            &.hs-main-font-element {
+                border-top-left-radius: 2px;
+                border-top-right-radius: 2px;
+                padding: 5px 15px;
+            }
+        }
+
+        &.no-list {
+            text-align: center;
+        }
+    }
+}
+
+li.hs-form-booleancheckbox,
+li.hs-form-checkbox,
+li.hs-form-radio {
+    font-size: 16px;
+    text-align: left;
+
+    >label {
+        input {
+            margin: 5px 10px 0 0;
+        }
+    }
+}
+
+.hs-form .actions {
+    text-align: center;
+}
+
+input[type="submit"] {
+    display: inline-block;
+    color: $black;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-top: 20px;
+    border-radius: 5px !important;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.2s ease;
+    border: 1px solid $yellow;
+    background: $yellow;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        cursor: pointer;
+    }
+}
+
+.submitted-message {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.legal-consent-container {
+    padding: 0 10px;
+
+    p, label {
+        font-size: 12px;
+    }
+
+    li.hs-form-booleancheckbox > label input {
+        margin-top: 2px;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .form-columns-1 {
+        .hs-form-field:not(.hs-fieldtype-radio):not(.hs-fieldtype-checkbox):not(.hs-fieldtype-booleancheckbox) {
+            width: calc(100% - 28px) !important;
+
+            ul.inputs-list.hs-error-msgs li label {
+                width: 100%;
+            }
+        }
+
+        .hs-form-field.hs-fieldtype-select .input {
+            width: calc(100% + 10px);
+        }
+    }
+
+    .submitted-message {
+        text-align: left;
+    }
+}
+
 @import './navigation';
 @import './footer';
 
