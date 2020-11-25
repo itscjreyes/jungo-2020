@@ -6,6 +6,9 @@ html {
   height: 200vh;
   margin: 0; }
 
+html {
+  scroll-behavior: smooth; }
+
 body {
   overflow-x: hidden; }
 
@@ -2216,3 +2219,20 @@ body {
     .main-lp-content-form .form-wrapper {
       max-width: 400px;
       margin: 0 auto 60px; } }
+
+.main-lp-center-content {
+  background: white;
+  text-align: center; }
+  .main-lp-center-content p {
+    margin-left: auto;
+    margin-right: auto; }
+    .main-lp-center-content p.callout {
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.4; }
+  .main-lp-center-content .btn {
+    margin-top: 40px; }
+
+@media screen and (max-width: 415px) {
+  .main-lp-center-content p.callout {
+    font-size: 24px; } }
