@@ -263,3 +263,30 @@ function accordion(){
 }
 
 document.addEventListener("DOMContentLoaded", accordion());
+
+function resourcesFilters(){
+    const filterSelect = document.querySelector('select#resource-filters');
+    filterSelect.addEventListener('change', function(e){
+        const value = e.target.value;
+
+        if (value == 'all'){
+            const cards = document.querySelectorAll('.resource-card');
+            cards.forEach(function(card){
+                card.style.display = 'block'
+            })
+        } else {
+            const cards = document.querySelectorAll('.resource-card');
+            cards.forEach(function(card){
+                card.style.display = 'none'
+            })
+    
+            const selectedCards = document.querySelectorAll(`.resource-card[data-type='${value}']`);
+            selectedCards.forEach(function(selected){
+                selected.style.display = 'block'
+            })
+        }
+
+    })
+}
+
+document.addEventListener("DOMContentLoaded", resourcesFilters());
