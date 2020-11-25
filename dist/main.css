@@ -2372,3 +2372,50 @@ li.resource-card {
 @media screen and (max-width: 415px) {
   .thank-you .title {
     font-size: 24px; } }
+
+.contact-block {
+  background: #F2F8FC; }
+  .contact-block .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+  .contact-block .content-wrapper {
+    width: 45%;
+    margin-right: 5%; }
+    .contact-block .content-wrapper h3 {
+      font-size: 18px;
+      margin-bottom: 0; }
+    .contact-block .content-wrapper p {
+      margin-top: 5px;
+      margin-bottom: 30px; }
+  .contact-block .contact-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    max-width: 400px; }
+  .contact-block .form-wrapper {
+    max-width: 580px; }
+
+@media screen and (max-width: 1023px) {
+  .contact-block .container {
+    display: block; }
+  .contact-block .content-wrapper {
+    width: 100%;
+    max-width: 540px;
+    margin: auto; }
+  .contact-block .form-wrapper {
+    margin: 60px auto 0;
+    padding: 40px 20px;
+    max-width: 540px; } }
