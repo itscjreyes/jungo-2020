@@ -374,6 +374,18 @@ input[type="submit"] {
     }
 }
 
+.form-wrapper.card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 10px rgba(0,0,0,0.1);
+    
+    h3 {
+        text-align: center;
+        font-size: 40px;
+    }
+}
+
 @media screen and (max-width: 415px) {
     .form-columns-1 {
         .hs-form-field:not(.hs-fieldtype-radio):not(.hs-fieldtype-checkbox):not(.hs-fieldtype-booleancheckbox) {
@@ -391,6 +403,14 @@ input[type="submit"] {
 
     .submitted-message {
         text-align: left;
+    }
+
+    .form-wrapper.card {
+        padding: 40px 10px;
+        
+        h3 {
+            font-size: 32px;
+        }
     }
 }
 
@@ -422,3 +442,5 @@ input[type="submit"] {
 @import './accordion';
 @import './form-embed';
 @import './resources';
+@import './main-lp-banner';
+@import './main-lp-content-form';
