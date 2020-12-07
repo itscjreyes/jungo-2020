@@ -21,11 +21,11 @@
             }
         }
     }
-}
 
-// body {
-//     background-color: $blue--light;
-// }
+    .form-wrapper {
+        max-width: 580px;
+    }
+}
 
 @media screen and (max-width: 1200px){
     .main-lp-content-form {

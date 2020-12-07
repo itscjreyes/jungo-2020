@@ -14,7 +14,6 @@ body,
 html {
   font-family: "museo-sans", sans-serif;
   color: #3f3f3f; 
-  height: 200vh;
   margin: 0;
 }
 
@@ -58,13 +57,33 @@ h1 {
 
 p, li {
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.8;
+}
+
+.content-wrapper {
+    p,
+    li {
+        a {
+            color: $blue;
+            font-weight: 600;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
 }
 
 a {
     text-decoration: none;
     color: inherit;
     transition: all 0.2s ease;
+}
+
+span.green-plus {
+    color: $green;
+    font-style: italic;
 }
 
 .caption {
@@ -91,6 +110,16 @@ a {
 
 img {
     max-width: 100%;
+}
+
+.content-wrapper {
+    ul, ol {
+        padding-left: 20px;
+
+        li {
+            padding-left: 10px;
+        }
+    }
 }
 
 .lazyload,
@@ -193,8 +222,12 @@ button {
 }
 
 .hs-form {
-    max-width: 500px;
+    max-width: 950px;
     margin: auto;
+}
+
+fieldset {
+    max-width: 100% !important;
 }
 
 .field {
@@ -247,7 +280,7 @@ select {
         margin: 0 10px !important;
     }
 
-    input {
+    input:not([type="checkbox"]):not([type="radio"]) {
         width: calc(100% - 40px) !important;
     }
 }
@@ -454,3 +487,4 @@ input[type="submit"] {
 @import './thank-you';
 @import './contact-block';
 @import './popup-form';
+@import './ppc-banner';

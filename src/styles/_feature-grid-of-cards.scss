@@ -1,7 +1,12 @@
 .feature-grid-of-cards {
     text-align: center;
 
-    .title {
+    .container {
+        padding-bottom: 0;
+    }
+
+    .title,
+    .title-wrapper p {
         margin-left: auto;
         margin-right: auto;
     }

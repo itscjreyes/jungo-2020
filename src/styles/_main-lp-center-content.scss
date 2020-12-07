@@ -2,15 +2,17 @@
     background: white;
     text-align: center;
 
-    p {
+    .content-wrapper {
         margin-left: auto;
         margin-right: auto;
+    }
 
-        &.callout {
-            font-size: 30px;
-            font-weight: 600;
-            line-height: 1.4;
-        }
+    p.callout {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 1.4;
     }
 
     .btn {

@@ -27,13 +27,17 @@
     }
 
     .card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         position: relative;
         width: calc(100% / 3 - 60px);
         margin: 10px;
         box-shadow: 0 12px 20px rgba(0,0,0,0.08);
         border-radius: 0 0 20px 20px;
-        padding: 36px 20px 40px;
+        padding: 46px 20px 40px;
         text-align: left;
+        background: white;
         transition: all 0.2s ease;
 
         &:before {
@@ -88,7 +92,7 @@
         &.video {
             &:hover,
             &:focus {
-                padding-top: 34px;
+                padding-top: 44px;
                 outline: none;
                 transform: translateY(-6px);
                 box-shadow: 0 15px 20px rgba(0,0,0,0.1);

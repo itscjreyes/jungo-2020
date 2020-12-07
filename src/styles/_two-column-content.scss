@@ -90,3 +90,11 @@
         }
     }
 }
+
+@media screen and (max-width: 415px) {
+    .two-column-content {
+        .title.title-left {
+            font-size: 22px;
+        }
+    }
+}
